@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Display</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h2>User Data</h2>
+<table id="dataTable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Sex</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Data rows will be inserted here dynamically -->
+    </tbody>
+</table>
+
+<script>
+    function fetchData() {
+        fetch('http://localhost:8080/getStudents')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(jsonData => {
+                if (jsonData.code === 1) {
+                    populateTable(jsonData.data);
+                } else {
+                    console.error('Failed to fetch data:', jsonData.msg);
+                }
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+            });
+    }
+
+    function populateTable(data) {
+        const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+        tableBody.innerHTML = ''; // Clear existing data if any
+        data.forEach(item => {
+            let row = tableBody.insertRow();
+            let cellId = row.insertCell(0);
+            let cellName = row.insertCell(1);
+            let cellSex = row.insertCell(2);
+            cellId.textContent = item.sid;
+            cellName.textContent = item.name;
+            cellSex.textContent = item.sex;
+        });
+    }
+
+    // Call fetch data when the document is loaded
+    document.addEventListener('DOMContentLoaded', fetchData);
+
+</script>
+</body>
+</html>

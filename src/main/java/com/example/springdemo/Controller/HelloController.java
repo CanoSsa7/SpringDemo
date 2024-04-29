@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@RestController
+@RestController //包含@ResponseBody，会把返回的
 public class HelloController {
     @RequestMapping("/dateParam")
     public String dateParam(@DateTimeFormat(pattern = "yyyy-MM-dd") LocalDateTime updateTime){
