@@ -19,7 +19,5 @@
         </environment>
     </environments>
 
-    <mappers>
-        <package name="com.example.springdemo."/>
-    </mappers>
+
 </configuration>
