@@ -3,6 +3,7 @@ package com.example.springdemo.Service.impl;
 import com.example.springdemo.Dao.StuMapper;
 import com.example.springdemo.Entity.Student;
 import com.example.springdemo.Entity.Teacher;
+import com.example.springdemo.Entity.User;
 import com.example.springdemo.Service.StuService;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -30,5 +31,10 @@ public class StuServiceImpl implements StuService {
     @Override
     public List<Teacher> getTeachers() {
         return stuMapper.getTeachers();
+    }
+
+    @Override
+    public User getUser(String username, String pwd) {
+        return stuMapper.getUser(username, pwd);
     }
 }
