@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 try {
                     var response = JSON.parse(request.responseText);
                     if (response.code === 1) {
-                        alert('登录成功');
+                        alert('登录成功' + response.msg);
                     } else {
                         alert('登录失败: ' + response.msg); // 提示具体的错误信息
                     }

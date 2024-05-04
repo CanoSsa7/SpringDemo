@@ -34,7 +34,7 @@ class SpringDemoApplicationTests {
     public void testParseJWT(){
         Claims claim = Jwts.parser()
                 .setSigningKey("CanoSsa7")
-                .parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiWmhoIiwiaWQiOiIxMTExIiwiZXhwIjoxNzE0NzUyMDA0fQ.CzA0WF9sj4a6QlYGxpl-bbiVdPNUNNjs1xQdT9i-W8g")
+                .parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiWmhoIiwiaWQiOiIxMTExIiwiZXhwIjoxNzE0ODI4MDMzfQ.qZQ4O8Z-I4nH1WGtD-aoegQaC8HW2ff3I7AHCodPQ8c")
                 .getBody();
         System.out.println(claim);
     }
