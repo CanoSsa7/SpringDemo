@@ -20,8 +20,8 @@ class SpringDemoApplicationTests {
     @Test
     public void testGenerateJWT(){
         Map<String, Object> claims = new HashMap<>();
-        claims.put("name", "Zhh");
-        claims.put("id", "1111");
+        claims.put("name", "admin");
+        claims.put("id", "123456");
         String jwt = Jwts.builder()
                 .signWith(SignatureAlgorithm.HS256, "CanoSsa7")
                 .setClaims(claims)

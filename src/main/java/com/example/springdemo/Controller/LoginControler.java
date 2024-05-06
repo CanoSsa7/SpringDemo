@@ -18,6 +18,7 @@ public class LoginControler {
     private StuService stuService;
     @PostMapping("/login")
     Result login(@RequestBody User user){
+
         User u = stuService.getUser(user.getUsername(), user.getPwd());
         if(u == null){
             System.out.println("登录失败");
