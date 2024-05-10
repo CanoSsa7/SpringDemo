@@ -23,7 +23,7 @@ public class LoginControler {
         if(u == null){
             System.out.println("登录失败");
             return Result.fail("未找到用户");
-        }else{
+        }else{ //登录成功后， 下发jwt令牌
             Map<String, Object> userInfo = new HashMap<>();
             userInfo.put("username", u.getUsername());
             userInfo.put("pwd", u.getPwd());

@@ -1,9 +1,12 @@
 package com.example.springdemo;
 
+import com.example.springdemo.Service.StuService;
+import com.example.springdemo.Service.impl.StuServiceImpl;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
@@ -11,7 +14,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-//@SpringBootTest
+@SpringBootTest
 class SpringDemoApplicationTests {
 
     @Test
@@ -38,4 +41,5 @@ class SpringDemoApplicationTests {
                 .getBody();
         System.out.println(claim);
     }
+
 }

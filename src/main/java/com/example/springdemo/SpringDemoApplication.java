@@ -14,7 +14,7 @@ import java.util.Properties;
 //@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @SpringBootApplication
 @ServletComponentScan
-@MapperScan("com.example.springdemo.Dao")
+@MapperScan("com.example.springdemo.Dao") //自动扫描mapper，装填进IOC容器
 public class SpringDemoApplication {
 
 

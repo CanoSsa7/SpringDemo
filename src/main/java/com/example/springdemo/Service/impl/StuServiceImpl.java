@@ -37,4 +37,10 @@ public class StuServiceImpl implements StuService {
     public User getUser(String username, String pwd) {
         return stuMapper.getUser(username, pwd);
     }
+
+    @Override
+    public void addStudent(Student student) {
+        stuMapper.addStudent(student);
+    }
+
 }

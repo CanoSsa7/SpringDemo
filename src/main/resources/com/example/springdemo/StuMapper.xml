@@ -4,4 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.springdemo.Dao.StuMapper">
 
+    <insert id="addStudent">
+        insert into study.student values(#{sid}, #{sex}, #{name})
+    </insert>
 </mapper>
