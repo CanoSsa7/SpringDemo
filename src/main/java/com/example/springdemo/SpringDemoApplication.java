@@ -39,6 +39,7 @@ public class SpringDemoApplication {
             System.out.println("MyBatisConfiguration.pageHelper()");
             PageHelper pageHelper = new PageHelper();
             Properties p = new Properties();
+
             p.setProperty("offsetAsPageNum", "true");
             p.setProperty("rowBoundsWithCount", "true");
             p.setProperty("reasonable", "true");

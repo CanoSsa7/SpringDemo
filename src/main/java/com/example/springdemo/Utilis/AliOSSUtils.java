@@ -18,7 +18,7 @@ import java.util.UUID;
  */
 @Component
 @Data
-@ConfigurationProperties(prefix = "aliyun.oss")
+@ConfigurationProperties(prefix = "aliyun.oss") //到config文件中寻找配置，自动定义成员变量的值
 public class AliOSSUtils {
 
     String endpoint;
